@@ -1,0 +1,41 @@
+{
+  "name": "api",
+  "version": "0.0.1",
+  "description": "",
+  "license": "MIT",
+  "author": "",
+  "type": "module",
+  "main": "build/index.js",
+  "scripts": {
+    "check": "tsc --noEmit && echo ✔ Ok",
+    "build": "tsup",
+    "dev": "tsx --env-file=.env ./src/index.ts",
+    "dev:dev": "tsx --env-file=.env.dev ./src/index.ts",
+    "watch": "tsx --watch --env-file=.env ./src/index.ts",
+    "watch:dev": "tsx --watch --env-file=.env.dev ./src/index.ts",
+    "start": "node --env-file=.env .",
+    "start:dev": "node --env-file=.env.dev ."
+  },
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "express": "^5.2.1",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "tsup": "^8.5.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "imports": {
+    "#index": [
+      "./build/index.js"
+    ],
+    "#env": [
+      "./build/env.js"
+    ],
+    "#functions": [
+      "./build/functions/index.js"
+    ]
+  }
+}
