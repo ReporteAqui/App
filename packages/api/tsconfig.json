@@ -12,6 +12,7 @@
 		"target": "ESNext",
 		"module": "NodeNext",
 		"moduleResolution": "NodeNext",
+    "types": ["bun-types"],
 		
 		// Linting options
 		"noUnusedLocals": true,
@@ -27,6 +28,7 @@
 		// Path mapping Options
 		"paths": {
 			"#index": ["./src/index.ts"],
+      "#app": ["./src/app/index.ts"],
 			"#env": ["./src/env.ts"],
 			"#functions": ["./src/functions/index.ts"],
 		}

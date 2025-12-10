@@ -1,13 +1,23 @@
-# API
+# Elysia with Bun runtime
 
-Backend and api of `Report Aqui`
+Backend para o website do projeto integrador
 
-> [!WARNING]
-> [NodeJs](https://nodejs.org/en) version required: 24.x or higher
+## Iniciando
+```bash
+bun install
+```
+
+## Desenvolvimento
+Para iniciar o servidor de desenvolvimento, execute:
+```bash
+bun run dev
+```
 
 ## Scripts
 
-- `dev`: running bot in development
-- `build`: build the project
-- `watch`: running in watch mode
-- `start`: running the compiled bot
+- `bun run dev` - Inicia o servidor de desenvolvimento
+- `bun run start` - Inicia o servidor de produção
+- `bun run build` - Compila o projeto
+- `bun run check` - Verifica se o projeto está correto
+
+Abra http://localhost:3000/ no seu navegador para ver o resultado.

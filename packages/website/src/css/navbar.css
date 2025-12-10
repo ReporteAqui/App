@@ -3,13 +3,13 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 .navbar {
-    @apply w-full min-w-0 sticky top-0 inset-x-0 z-30 p-4 xl:px-[calc((100vw-1280px)/2)] flex justify-between items-center backdrop-blur-md shadow-lg shadow-black/20;
+    @apply w-full min-w-0 sticky top-0 inset-x-0 z-30 p-4 xl:px-[calc((100vw-1280px)/2)] grid grid-cols-3 items-center backdrop-blur-md shadow-sm bg-white dark:bg-neutral-900 border-b border-black/5 dark:border-white/10 dark:border-white/5;
 }
 
 .navlinks {
-    @apply flex gap-x-4 m-auto;
+    @apply flex gap-x-1 items-center justify-center;
 }
 
 .navlinks a {
-    @apply font-bold px-4 py-2 rounded-lg hover:bg-neutral-200 hover:shadow-inner hover:shadow-black/20;
+    @apply font-medium text-[17px] tracking-wide px-4 py-2 rounded-full hover:shadow-inner  text-neutral-800 dark:text-white hover:text-black hover:shadow-black/15 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/10 dark:hover:shadow-white/10;
 }

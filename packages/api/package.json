@@ -1,41 +1,32 @@
 {
-  "name": "api",
+  "name": "app",
   "version": "0.0.1",
-  "description": "",
+  "description": "Backend TypeScript framework with End-to-End Type Safety",
   "license": "MIT",
-  "author": "",
+  "author": "Nathan",
   "type": "module",
   "main": "build/index.js",
+  "private": true,
   "scripts": {
     "check": "tsc --noEmit && echo ✔ Ok",
     "build": "tsup",
-    "dev": "tsx --env-file=.env ./src/index.ts",
-    "dev:dev": "tsx --env-file=.env.dev ./src/index.ts",
-    "watch": "tsx --watch --env-file=.env ./src/index.ts",
-    "watch:dev": "tsx --watch --env-file=.env.dev ./src/index.ts",
-    "start": "node --env-file=.env .",
-    "start:dev": "node --env-file=.env.dev ."
+    "dev": "bun --env-file=.env ./src/index.ts",
+    "dev:dev": "bun --env-file=.env.dev ./src/index.ts",
+    "watch": "bun --watch --env-file=.env ./src/index.ts",
+    "watch:dev": "bun --watch --env-file=.env.dev ./src/index.ts",
+    "start": "bun --env-file=.env .",
+    "start:dev": "bun --env-file=.env.dev ."
   },
   "dependencies": {
-    "chalk": "^5.6.2",
-    "express": "^5.2.1",
-    "zod": "^4.1.13"
+    "elysia": "latest",
+    "chalk": "latest",
+    "zod": "latest"
   },
   "devDependencies": {
-    "@types/node": "^24.10.1",
-    "tsup": "^8.5.1",
-    "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "bun-types": "latest",
+    "tsup": "latest",
+    "tsx": "latest",
+    "typescript": "latest"
   },
-  "imports": {
-    "#index": [
-      "./build/index.js"
-    ],
-    "#env": [
-      "./build/env.js"
-    ],
-    "#functions": [
-      "./build/functions/index.js"
-    ]
-  }
+  "module": "src/index.js"
 }
