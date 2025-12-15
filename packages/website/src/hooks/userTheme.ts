@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 
 type Theme = 'light' | 'dark';
 
-export function useTheme() {
-    const [theme, setTheme] = useState<Theme>(() => {
+export default function userTheme() {
+    const [theme, setTheme] = useState<Theme>(function() {
         if (typeof window !== 'undefined') {
             const stored = localStorage.getItem('theme') as Theme;
             if (stored) return stored;
@@ -13,7 +13,7 @@ export function useTheme() {
         return 'light';
     });
 
-    useEffect(() => {
+    useEffect(function() {
         const root = window.document.documentElement;
         if (theme === 'dark') {
             root.classList.add('dark');

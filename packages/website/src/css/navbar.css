@@ -3,13 +3,69 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 .navbar {
-    @apply w-full min-w-0 sticky top-0 inset-x-0 z-30 p-4 xl:px-[calc((100vw-1280px)/2)] grid grid-cols-3 items-center backdrop-blur-md shadow-sm bg-white dark:bg-neutral-900 border-b border-black/5 dark:border-white/10 dark:border-white/5;
+    @apply w-full min-w-0 sticky top-0 inset-x-0 z-30 p-4 lg:px-[calc((100vw-1000px)/2)] grid grid-cols-3 items-center backdrop-blur-md shadow-sm bg-white dark:bg-neutral-900 border-b border-black/5 dark:border-white/10 dark:border-white/5;
 }
 
-.navlinks {
+.navleading {
+    @apply flex items-center gap-x-2;
+}
+
+.navleading svg {
+    @apply w-6 h-6 stroke-green-600 fill-green-600 dark:stroke-green-500 dark:fill-green-500;
+}
+
+.navleading h1 {
+    @apply text-xl font-bold tracking-tight text-green-600 dark:text-green-400;
+}
+
+.navleading button {
+    @apply p-2 rounded-full hover:shadow-inner hover:bg-black/10 hover:shadow-black/10 dark:hover:bg-white/10 dark:hover:shadow-white/5;
+}
+
+.navtitle {
     @apply flex gap-x-1 items-center justify-center;
 }
 
-.navlinks a {
-    @apply font-medium text-[17px] tracking-wide px-4 py-2 rounded-full hover:shadow-inner  text-neutral-800 dark:text-white hover:text-black hover:shadow-black/15 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/10 dark:hover:shadow-white/10;
+.navtitle a {
+    @apply w-25 font-semibold text-[18px] text-center px-4 py-1 rounded-full hover:shadow-inner  text-neutral-800 dark:text-white hover:text-black hover:shadow-black/15 dark:hover:text-white hover:bg-black/10 dark:hover:bg-white/20;
+}
+
+.navtitle svg {
+    @apply w-6 h-6 stroke-green-500 fill-green-500;
+}
+
+.navtitle h1 {
+    @apply text-xl font-bold tracking-tight text-green-600 dark:text-green-400;
+}
+
+@media (max-width: 460px) {
+    .navtitle svg {
+        @apply w-4 h-4;
+    }
+
+    .navtitle h1 {
+        @apply text-sm;
+    }
+}
+
+@media (max-width: 341px) {
+    .navtitle svg {
+        @apply w-4 h-4;
+    }
+
+    .navtitle h1 {
+        @apply text-[12px];
+    }
+}
+
+.navaction {
+    @apply flex justify-end;
+}
+
+.navaction button {
+    @apply p-2 rounded-full hover:shadow-inner hover:bg-black/10 hover:shadow-black/10 dark:hover:bg-white/10 dark:hover:shadow-white/5;
+}
+
+.navmenu {
+    @apply flex gap-x-1 items-center justify-center;
 }

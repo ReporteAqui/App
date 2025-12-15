@@ -17,6 +17,7 @@
     "@tanstack/router-plugin": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-icons": "latest",
     "tailwindcss": "latest",
     "zod": "latest"
   },

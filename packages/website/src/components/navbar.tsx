@@ -1,50 +1,76 @@
-import { useState } from 'react'
-import "@css/navbar.css"
-import { Link } from '@tanstack/react-router'
-import { useTheme } from '../hooks/useTheme'
+import { useState } from "react";
+import "@css/navbar.css";
+import { Link } from "@tanstack/react-router";
+import userMedia from "@/hooks/matchMedia";
+import userTheme from "@/hooks/userTheme";
+import { FiSun, FiMoon, FiMenu } from "react-icons/fi";
+import { FaLeaf } from "react-icons/fa";
 
-export default function Header() {
-  const [isOpen, setIsOpen] = useState(false)
-  const { theme, toggleTheme } = useTheme()
+export default function Navbar() {
+    const { isDesktop } = userMedia();
+    const { theme, toggleTheme } = userTheme();
 
-  return (
-    <>
-      <header className="navbar">
-        <h1 className="text-xl font-semibold tracking-tight dark:text-white">RECICLAGEM</h1>
+    return (
+        <>
+            <nav className="navbar">
+                {isDesktop ? (
+                    <>
+                        <div className="navleading">
+                            <FaLeaf />
+                            <h1>Reporte Aqui</h1>
+                        </div>
 
-        <div className="navlinks">
-            <Link to="/">Inicio</Link>
-            <Link to="/">Forum</Link>
-            <Link to="/">Contato</Link>
-        </div>
+                        <div className="navtitle">
+                            <Link to="/">Inicio</Link>
+                            <Link to="/">Forum</Link>
+                            <Link to="/">Contato</Link>
+                        </div>
 
-        <div className="flex justify-end">
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-full hover:shadow-inner hover:bg-black/10 hover:shadow-black/10 dark:hover:bg-white/10 dark:hover:shadow-white/5"
-            aria-label="Toggle theme"
-          >
-            {theme === 'light' ? (
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-              </svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="yellow" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="4" />
-                <path d="M12 2v2" />
-                <path d="M12 20v2" />
-                <path d="m4.93 4.93 1.41 1.41" />
-                <path d="m17.66 17.66 1.41 1.41" />
-                <path d="M2 12h2" />
-                <path d="M20 12h2" />
-                <path d="m6.34 17.66-1.41 1.41" />
-                <path d="m19.07 4.93-1.41 1.41" />
-              </svg>
-            )}
-          </button>
-        </div>
+                        <div className="navaction">
+                            <button
+                                onClick={toggleTheme}
+                                aria-label="Toggle theme"
+                            >
+                                {theme === "light" ? (
+                                    <FiMoon className="stroke-blue-300 fill-blue-300 w-6 h-6" />
+                                ) : (
+                                    <FiSun className="stroke-yellow-300 fill-yellow-300 w-6 h-6" />
+                                )}
+                            </button>
+                        </div>
+                    </>
+                ) : (
+                    <>
+                        <div className="navleading">
+                            <button className="">
+                                <FiMenu className="stroke-green-600 dark:stroke-green-500 w-6 h-6" />
+                            </button>
+                        </div>
 
-      </header>
-    </>
-  )
+                        <div className="navtitle">
+                            <FaLeaf />
+                            <h1>Reporte Aqui</h1>
+                        </div>
+
+                        <div className="navaction">
+                            <button
+                                onClick={toggleTheme}
+                                aria-label="Toggle theme"
+                            >
+                                {theme === "light" ? (
+                                    <FiMoon className="stroke-blue-300 fill-blue-300 w-6 h-6" />
+                                ) : (
+                                    <FiSun className="stroke-yellow-300 fill-yellow-300 w-6 h-6" />
+                                )}
+                            </button>
+                        </div>
+                    </>
+                )}
+            </nav>
+        </>
+    );
 }
+
+/*
+
+*/
