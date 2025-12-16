@@ -10,7 +10,7 @@ export const Route = createFileRoute('/_public/')({
 function App() {
   return (
     <>
-      <div className="gap-y-8 py-8 mb-8 md:px-[calc((100vw-736px)/2)] px-8 flex flex-col items-center bg-linear-to-br from-green-400 to-green-700">
+      <div className="gap-y-8 py-8 pt-24 mb-8 md:px-[calc((100vw-736px)/2)] px-8 flex flex-col items-center bg-linear-to-br from-green-400 to-green-700">
         <FaLeaf className="lg:w-18 lg:h-18 w-15 h-15 fill-white"/>
         <h1 className="lg:text-4xl text-3xl font-bold text-center text-white">
           Bem-vindo ao Reporte Aqui

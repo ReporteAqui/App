@@ -3,69 +3,59 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 .navbar {
-    @apply w-full min-w-0 sticky top-0 inset-x-0 z-30 p-4 lg:px-[calc((100vw-1000px)/2)] grid grid-cols-3 items-center backdrop-blur-md shadow-sm bg-white dark:bg-neutral-900 border-b border-black/5 dark:border-white/10 dark:border-white/5;
+    @apply w-full min-w-0 fixed top-0 inset-x-0 z-30 pt-6 lg:px-[calc((100vw-1024px+64px)/2)] backdrop-blur-md shadow-sm bg-white dark:bg-neutral-900 border-b border-black/5 dark:border-white/10 dark:border-white/5;
 }
 
-.navleading {
-    @apply flex items-center gap-x-2;
+.nav-title {
+    @apply flex gap-x-1 items-center;
 }
 
-.navleading svg {
-    @apply w-6 h-6 stroke-green-600 fill-green-600 dark:stroke-green-500 dark:fill-green-500;
-}
-
-.navleading h1 {
-    @apply text-xl font-bold tracking-tight text-green-600 dark:text-green-400;
-}
-
-.navleading button {
-    @apply p-2 rounded-full hover:shadow-inner hover:bg-black/10 hover:shadow-black/10 dark:hover:bg-white/10 dark:hover:shadow-white/5;
-}
-
-.navtitle {
-    @apply flex gap-x-1 items-center justify-center;
-}
-
-.navtitle a {
-    @apply w-25 font-semibold text-[18px] text-center px-4 py-1 rounded-full hover:shadow-inner  text-neutral-800 dark:text-white hover:text-black hover:shadow-black/15 dark:hover:text-white hover:bg-black/10 dark:hover:bg-white/20;
-}
-
-.navtitle svg {
+.nav-title svg {
     @apply w-6 h-6 stroke-green-500 fill-green-500;
 }
 
-.navtitle h1 {
-    @apply text-xl font-bold tracking-tight text-green-600 dark:text-green-400;
+.nav-title h1 {
+    @apply font-bold text-center text-green-500 text-lg;
 }
 
-@media (max-width: 460px) {
-    .navtitle svg {
-        @apply w-4 h-4;
+.nav-leading {
+    @apply flex items-center justify-start
+}
+
+.nav-action {
+    @apply flex items-center justify-end gap-4;
+}
+
+.nav-menu {
+    @apply flex items-center justify-center text-center font-semibold text-lg gap-3;
+}
+
+.nav-menu a {
+    @apply py-1 px-4 rounded-lg hover:shadow-inner hover:bg-black/10 hover:dark:bg-white/20;
+}
+
+.navbar-mobile {
+    @apply flex flex-col justify-center gap-y-4;
+}
+
+.nav-desktop {
+    @apply pb-6 grid grid-cols-3 items-center;
+}
+
+.nav-mobile {
+    @apply px-8 grid grid-cols-3;
+}
+
+.nav-menu-mobile {
+    @apply flex flex-col px-8 gap-4;
+}
+
+.nav-menu-mobile a {
+    @apply font-medium px-4 py-2 rounded-lg shadow-md border border-black/5 bg-black/10 dark:bg-white/10;
+}
+
+@media (max-width: 484px) {
+    .nav-title svg {
+        @apply hidden;
     }
-
-    .navtitle h1 {
-        @apply text-sm;
-    }
-}
-
-@media (max-width: 341px) {
-    .navtitle svg {
-        @apply w-4 h-4;
-    }
-
-    .navtitle h1 {
-        @apply text-[12px];
-    }
-}
-
-.navaction {
-    @apply flex justify-end;
-}
-
-.navaction button {
-    @apply p-2 rounded-full hover:shadow-inner hover:bg-black/10 hover:shadow-black/10 dark:hover:bg-white/10 dark:hover:shadow-white/5;
-}
-
-.navmenu {
-    @apply flex gap-x-1 items-center justify-center;
 }
