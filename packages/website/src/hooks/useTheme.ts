@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 export type Theme = 'light' | 'dark';
 
-export default function userTheme() {
+export default function useTheme() {
     const [theme, setTheme] = useState<Theme>(function() {
         if (typeof window !== 'undefined') {
             const stored = localStorage.getItem('theme') as Theme;

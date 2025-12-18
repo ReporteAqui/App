@@ -14,32 +14,34 @@ export const Route = createFileRoute('/_public/')({
 function App() {
   return (
     <>
-      <div className="gap-y-8 py-8 pt-28 mb-8 md:px-[calc((100vw-736px)/2)] px-8 flex flex-col items-center bg-linear-to-br from-green-400 to-green-700">
-        <FaLeaf className="lg:w-18 lg:h-18 w-15 h-15 fill-white"/>
-        <h1 className="lg:text-4xl text-3xl font-bold text-center text-white">
-          Bem-vindo ao Reporte Aqui
-        </h1>
-        <h5 className="text-[16px] text-center text-white">
-          Sua voz é fundamental para melhorar o saneamento básico e o meio ambiente em nossa cidade. Reporte problemas, acompanhe soluções e contribua para uma Anápolis mais limpa e saudável.
-        </h5>
+      <div className="py-8 pt-28 mb-8 px-8 flex flex-col items-center bg-linear-to-br from-green-400 to-green-700">
+        <div className="w-full max-w-200 flex flex-col items-center justify-center gap-y-8">
+          <FaLeaf className="lg:w-18 lg:h-18 w-15 h-15 fill-white"/>
+          <h1 className="lg:text-4xl text-3xl font-bold text-center text-white">
+            Bem-vindo ao Reporte Aqui
+          </h1>
+          <h5 className="text-[16px] text-center text-white">
+            Sua voz é fundamental para melhorar o saneamento básico e o meio ambiente em nossa cidade. Reporte problemas, acompanhe soluções e contribua para uma Anápolis mais limpa e saudável.
+          </h5>
+        </div>
       </div>
 
-      <div className="gap-y-8 py-8 md:px-[calc((100vw-736px)/2)] px-8  flex flex-col items-center">
-        <div className="w-full px-4 py-8 flex flex-col items-center gap-y-4 border shadow-inner border-black/20 bg-neutral-100 dark:bg-neutral-900 rounded-4xl shadow-black/20">
+      <div className="gap-y-8 py-8 px-8 flex flex-col items-center">
+        <div className="w-full max-w-200 px-4 py-8 flex flex-col items-center gap-y-4 border-2 border-black/10  bg-neutral-100 dark:bg-neutral-900 rounded-4xl">
           <h1 className="text-xl font-bold text-center">
             Faça parte da mudança!
           </h1>
           <h3 className="text-sm text-center font-medium text-neutral-600 dark:text-neutral-400">
             Reporte problemas de saneamento ou ambiental e ajude a construir uma Anápolis melhor para todos.
           </h3>
-          <Link to='/' className='px-4 py-2 text-center font-bold text-lg rounded-full shadow-md shadow-black/20 text-white dark:text-white bg-green-600'>
+          <Link to='/' className='px-4 py-2 text-center font-bold text-lg rounded-full shadow-md shadow-black/30 text-white dark:text-white bg-green-600'>
             Reportar Problema
           </Link>
         </div>
       </div>
 
-      <div className="gap-y-8 py-8 md:px-[calc((100vw-736px)/2)] px-8  flex flex-col items-center">
-        <div className="w-full px-4 py-8 gap-y-8 flex flex-col items-center gap-y-4 border shadow-inner border-black/20 bg-neutral-100 dark:bg-neutral-900 rounded-4xl shadow-black/20">
+      <div className="gap-y-8 py-8 px-8  flex flex-col items-center">
+        <div className="w-full max-w-200 px-4 py-8 gap-y-8 flex flex-col items-center gap-y-4 border-2 border-black/10 bg-neutral-100 dark:bg-neutral-900 rounded-4xl">
           <h1 className="text-xl font-bold text-center">
             Comunicados
           </h1>
@@ -62,7 +64,9 @@ function App() {
           </div>
 
           <div>
-            <Link to='/' className='text-sm text-center font-medium bg-green-600 text-white px-4 py-2 rounded-full'>Ver mais...</Link>
+            <Link to='/' className='text-sm text-center font-medium shadow-md shadow-black/30 bg-green-600 text-white px-4 py-2 rounded-full'>
+              Ver mais...
+            </Link>
           </div>
           
 
@@ -76,8 +80,8 @@ function App() {
         </div>
       </div>
 
-      <div className="gap-y-8 py-8 md:px-[calc((100vw-736px)/2)] px-8 flex flex-col items-center">
-        <div className="w-full px-4 py-8 flex flex-col gap-y-4 border shadow-md border-black/20 bg-blue-600 rounded-4xl shadow-black/20">
+      <div className="gap-y-8 py-8 px-8 flex flex-col items-center">
+        <div className="w-full max-w-200 px-4 py-8 flex flex-col gap-y-4 border shadow-md border-black/20 bg-blue-600 rounded-4xl shadow-black/20">
           <div className="flex items-center justify-center gap-4">
             <div className="p-2 bg-white rounded-full">
               <FaUser className='w-6 h-6 stroke-blue-600 fill-blue-600'/>
@@ -96,8 +100,8 @@ function App() {
         </div>
       </div>
 
-      <div className="gap-y-8 py-8 md:px-[calc((100vw-736px)/2)] px-8  flex flex-col items-center">
-        <div className="w-full px-4 py-8 flex flex-col gap-y-4 border shadow-inner border-black/20 bg-neutral-100 dark:bg-neutral-900 rounded-4xl shadow-black/20">
+      <div className="gap-y-8 py-8 px-8  flex flex-col items-center">
+        <div className="w-full max-w-200 px-4 py-8 flex flex-col gap-y-4 border-2 border-black/10 bg-neutral-100 dark:bg-neutral-900 rounded-4xl ">
           <h1 className="text-xl font-bold text-center">
             Saneago
           </h1>

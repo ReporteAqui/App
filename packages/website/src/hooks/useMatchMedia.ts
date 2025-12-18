@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export default function userMedia() {
+export default function useMatchMedia() {
     const [isDesktop, setIsDesktop] = useState<boolean>(function () {
         return window.matchMedia("(min-width: 1024px)").matches;
     });
