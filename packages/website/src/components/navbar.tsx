@@ -29,7 +29,7 @@ function desktop(theme: Theme, toggleTheme: () => void) {
                     )}
                 </button>
                 <button className="p-2 rounded-full hover:shadow-inner hover:shadow-black/10 hover:bg-black/10 hover:dark:bg-white/10">
-                    <FaUser className="stroke-green-600 fill-green-600 w-6 h-6" />
+                    <FaUser className="stroke-green-500 fill-green-500 w-6 h-6" />
                 </button>
             </div>
         </nav>
@@ -79,8 +79,8 @@ function mobile(
                 }`}
             >
                 <div className="flex justify-end">
-                    <button className="p-2 rounded-full shadow-inner bg-black/10 dark:bg-white/10">
-                        <FaUser className="stroke-green-500 fill-green-500 w-6 h-6" />
+                    <button className="p-2 rounded-full shadow-inner bg-green-600">
+                        <FaUser className="stroke-white fill-white w-6 h-6" />
                     </button>
                 </div>
 
