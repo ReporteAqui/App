@@ -10,17 +10,18 @@
 
 import { Route as rootRouteImport } from './pages/__root'
 import { Route as PublicIndexRouteImport } from './pages/_public/index'
-import { Route as PublicAuthRouteImport } from './pages/_public/auth'
+import { Route as PublicContactsRouteImport } from './pages/_public/contacts'
 import { Route as PrivateReportRouteImport } from './pages/_private/report'
+import { Route as PublicAuthIndexRouteImport } from './pages/_public/auth/index'
 
 const PublicIndexRoute = PublicIndexRouteImport.update({
   id: '/_public/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PublicAuthRoute = PublicAuthRouteImport.update({
-  id: '/_public/auth',
-  path: '/auth',
+const PublicContactsRoute = PublicContactsRouteImport.update({
+  id: '/_public/contacts',
+  path: '/contacts',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivateReportRoute = PrivateReportRouteImport.update({
@@ -28,35 +29,49 @@ const PrivateReportRoute = PrivateReportRouteImport.update({
   path: '/report',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PublicAuthIndexRoute = PublicAuthIndexRouteImport.update({
+  id: '/_public/auth/',
+  path: '/auth/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/report': typeof PrivateReportRoute
-  '/auth': typeof PublicAuthRoute
+  '/contacts': typeof PublicContactsRoute
   '/': typeof PublicIndexRoute
+  '/auth': typeof PublicAuthIndexRoute
 }
 export interface FileRoutesByTo {
   '/report': typeof PrivateReportRoute
-  '/auth': typeof PublicAuthRoute
+  '/contacts': typeof PublicContactsRoute
   '/': typeof PublicIndexRoute
+  '/auth': typeof PublicAuthIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_private/report': typeof PrivateReportRoute
-  '/_public/auth': typeof PublicAuthRoute
+  '/_public/contacts': typeof PublicContactsRoute
   '/_public/': typeof PublicIndexRoute
+  '/_public/auth/': typeof PublicAuthIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/report' | '/auth' | '/'
+  fullPaths: '/report' | '/contacts' | '/' | '/auth'
   fileRoutesByTo: FileRoutesByTo
-  to: '/report' | '/auth' | '/'
-  id: '__root__' | '/_private/report' | '/_public/auth' | '/_public/'
+  to: '/report' | '/contacts' | '/' | '/auth'
+  id:
+    | '__root__'
+    | '/_private/report'
+    | '/_public/contacts'
+    | '/_public/'
+    | '/_public/auth/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   PrivateReportRoute: typeof PrivateReportRoute
-  PublicAuthRoute: typeof PublicAuthRoute
+  PublicContactsRoute: typeof PublicContactsRoute
   PublicIndexRoute: typeof PublicIndexRoute
+  PublicAuthIndexRoute: typeof PublicAuthIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -68,11 +83,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PublicIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_public/auth': {
-      id: '/_public/auth'
-      path: '/auth'
-      fullPath: '/auth'
-      preLoaderRoute: typeof PublicAuthRouteImport
+    '/_public/contacts': {
+      id: '/_public/contacts'
+      path: '/contacts'
+      fullPath: '/contacts'
+      preLoaderRoute: typeof PublicContactsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_private/report': {
@@ -82,13 +97,21 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivateReportRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_public/auth/': {
+      id: '/_public/auth/'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof PublicAuthIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   PrivateReportRoute: PrivateReportRoute,
-  PublicAuthRoute: PublicAuthRoute,
+  PublicContactsRoute: PublicContactsRoute,
   PublicIndexRoute: PublicIndexRoute,
+  PublicAuthIndexRoute: PublicAuthIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

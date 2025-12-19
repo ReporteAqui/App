@@ -5,8 +5,6 @@ import { FaLeaf, FaExclamationTriangle, FaCheckCircle } from "react-icons/fa";
 import { FiTrendingUp, FiMessageCircle } from "react-icons/fi";
 import Notices from "@/components/cards";
 import { FaWrench, FaWater, FaTrash, FaBuilding } from "react-icons/fa";
-import { FaComments } from "react-icons/fa6";
-import { HiChatBubbleLeftRight } from "react-icons/hi2";
 
 export const Route = createFileRoute("/_public/")({
     component: App,
@@ -41,7 +39,6 @@ const recentNotices = [
 ];
 
 function App() {
-    const [showChat, setShowChat] = useState(false);
     const problemsResolved = 1247; // Contador de problemas resolvidos
 
     return (
@@ -87,15 +84,15 @@ function App() {
                             </h3>
                         </Link>
 
-                        <button
-                            onClick={() => setShowChat(!showChat)}
+                        <Link
+                            to="/contacts"
                             className="w-52 flex items-center justify-center p-3 gap-2 hover:cursor-pointer bg-blue-500 hover:bg-blue-600 rounded-lg"
                         >
                             <FiMessageCircle className="stroke-white fill-white" />
                             <h3 className="font-bold text-white">
-                                Falar com Atendente
+                                Contatos
                             </h3>
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -191,57 +188,6 @@ function App() {
                     </p>
                 </div>
             </section>
-
-            {/* Botão Flutuante de Chat */}
-            <button
-                onClick={() => setShowChat(!showChat)}
-                className="fixed bottom-6 right-6 w-16 h-16 bg-green-600 text-white rounded-full shadow-lg hover:bg-green-700 transition-all hover:scale-110 flex items-center justify-center z-50"
-                aria-label="Abrir chat"
-            >
-                <HiChatBubbleLeftRight className="w-8 h-8" />
-            </button>
-
-            {/* Modal de Chat (simplificado) */}
-            {showChat && (
-                <div className="fixed bottom-24 right-6 w-80 h-96 bg-white dark:bg-neutral-800 rounded-lg shadow-2xl border-2 border-black/10 z-50 flex flex-col">
-                    <div className="flex items-center justify-between p-4 border-b border-neutral-200 dark:border-neutral-700">
-                        <h3 className="font-bold text-lg">
-                            Chat de Atendimento
-                        </h3>
-                        <button
-                            onClick={() => setShowChat(false)}
-                            className="text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300"
-                        >
-                            ✕
-                        </button>
-                    </div>
-                    <div className="flex-1 p-4 overflow-y-auto">
-                        <div className="text-center text-neutral-500 dark:text-neutral-400 py-8">
-                            <FaComments className="w-12 h-12 mx-auto mb-4" />
-                            <p>Conecte-se com um atendente</p>
-                            <p className="text-sm mt-2">
-                                Em breve você poderá conversar em tempo real
-                            </p>
-                        </div>
-                    </div>
-                    <div className="p-4 border-t border-neutral-200 dark:border-neutral-700">
-                        <div className="flex gap-2">
-                            <input
-                                type="text"
-                                placeholder="Digite sua mensagem..."
-                                className="flex-1 px-4 py-2 border border-neutral-300 dark:border-neutral-700 rounded-lg focus:ring-2 focus:ring-green-500 outline-none bg-white dark:bg-neutral-900"
-                                disabled
-                            />
-                            <button
-                                className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
-                                disabled
-                            >
-                                Enviar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            )}
         </>
     );
 }

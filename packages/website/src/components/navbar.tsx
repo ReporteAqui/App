@@ -18,7 +18,7 @@ function desktop(theme: Theme, toggleTheme: () => void) {
                 <div className="nav-menu">
                     <Link to="/">Inicio</Link>
                     <Link to="/">Forum</Link>
-                    <Link to="/">Contato</Link>
+                    <Link to="/contacts">Contato</Link>
                 </div>
 
                 <div className="nav-action gap-x-2">
@@ -97,7 +97,7 @@ function mobile(
 
                     <Link to="/">Inicio</Link>
                     <Link to="/">Forum</Link>
-                    <Link to="/">Contato</Link>
+                    <Link to="/contacts">Contato</Link>
                 </div>
             </div>
         </nav>

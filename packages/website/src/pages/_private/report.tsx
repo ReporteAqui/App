@@ -61,7 +61,7 @@ function RouteComponent() {
     return (
         <div className="min-h-[calc((100vh-81px))] mt-[81px] flex items-center justify-center px-4 py-12">
             <div className="w-full max-w-3xl">
-                <div className="bg-neutral-100 dark:bg-neutral-900 rounded-lg border-2 border-black/10 shadow-lg p-8 md:p-12">
+                <div className="bg-neutral-100 dark:bg-neutral-900 rounded-lg border-2 border-black/10 dark:border-white/10 shadow-lg dark:shadow-white/10 p-8 md:p-12">
                     <div className="mb-8 text-center">
                         <h1 className="text-3xl font-bold mb-2">
                             Reportar Problema
