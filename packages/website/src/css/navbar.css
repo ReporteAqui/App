@@ -3,7 +3,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 .navbar {
-    @apply w-full fixed top-0 z-30 py-5 items-center flex flex-col justify-center backdrop-blur-md shadow-sm bg-white dark:bg-neutral-900 border-b border-black/5 dark:border-white/10 dark:border-white/5;
+    @apply w-full fixed top-0 z-30 py-5 items-center flex flex-col justify-center shadow-md shadow-black/10 dark:shadow-white/10 bg-white dark:bg-neutral-950 border-b-2 border-black/5 dark:border-white/12;
 }
 
 .nav-title {

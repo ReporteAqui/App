@@ -1,148 +1,247 @@
 import "@/styles.css";
-import { createFileRoute, Link } from '@tanstack/react-router'
-import logo from '@/logo.svg'
-import { FaLeaf } from "react-icons/fa";
-import { FiTrendingUp } from "react-icons/fi";
-import Notices from '@/components/cards';
-import { FaWrench } from "react-icons/fa";
-import { FaUser } from "react-icons/fa6";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
+import { FaLeaf, FaExclamationTriangle, FaCheckCircle } from "react-icons/fa";
+import { FiTrendingUp, FiMessageCircle } from "react-icons/fi";
+import Notices from "@/components/cards";
+import { FaWrench, FaWater, FaTrash, FaBuilding } from "react-icons/fa";
+import { FaComments } from "react-icons/fa6";
+import { HiChatBubbleLeftRight } from "react-icons/hi2";
 
-export const Route = createFileRoute('/_public/')({
-  component: App,
-})
+export const Route = createFileRoute("/_public/")({
+    component: App,
+});
+
+// Dados mockados dos comunicados recentes
+const recentNotices = [
+    {
+        id: 1,
+        title: "Esgoto Resolvido - Rua das Flores",
+        body: "Problema de esgoto a céu aberto foi resolvido com sucesso na Rua das Flores, Centro.",
+        icon: <FaWater className="w-12 h-12 text-blue-500" />,
+    },
+    {
+        id: 2,
+        title: "Lixo Coletado - Parque Ipiranga",
+        body: "Acúmulo de lixo no Parque Ipiranga foi removido pela equipe de limpeza.",
+        icon: <FaTrash className="w-12 h-12 text-green-500" />,
+    },
+    {
+        id: 3,
+        title: "Vazamento Corrigido - Av. Brasil",
+        body: "Vazamento de água na Avenida Brasil foi reparado pela concessionária.",
+        icon: <FaWater className="w-12 h-12 text-cyan-500" />,
+    },
+    {
+        id: 4,
+        title: "Bueiro Desentupido - Rua Goiás",
+        body: "Bueiro na Rua Goiás foi desentupido e está funcionando normalmente.",
+        icon: <FaWrench className="w-12 h-12 text-orange-500" />,
+    },
+];
 
 function App() {
-  return (
-    <>
-      <div className="py-8 pt-28 mb-8 px-8 flex flex-col items-center bg-linear-to-br from-green-400 to-green-700">
-        <div className="w-full max-w-200 flex flex-col items-center justify-center gap-y-8">
-          <FaLeaf className="lg:w-18 lg:h-18 w-15 h-15 fill-white"/>
-          <h1 className="lg:text-4xl text-3xl font-bold text-center text-white">
-            Bem-vindo ao Reporte Aqui
-          </h1>
-          <h5 className="text-[16px] text-center text-white">
-            Sua voz é fundamental para melhorar o saneamento básico e o meio ambiente em nossa cidade. Reporte problemas, acompanhe soluções e contribua para uma Anápolis mais limpa e saudável.
-          </h5>
-        </div>
-      </div>
+    const [showChat, setShowChat] = useState(false);
+    const problemsResolved = 1247; // Contador de problemas resolvidos
 
-      <div className="gap-y-8 py-8 px-8 flex flex-col items-center">
-        <div className="w-full max-w-200 px-4 py-8 flex flex-col items-center gap-y-4 border-2 border-black/10  bg-neutral-100 dark:bg-neutral-900 rounded-4xl">
-          <h1 className="text-xl font-bold text-center">
-            Faça parte da mudança!
-          </h1>
-          <h3 className="text-sm text-center font-medium text-neutral-600 dark:text-neutral-400">
-            Reporte problemas de saneamento ou ambiental e ajude a construir uma Anápolis melhor para todos.
-          </h3>
-          <Link to='/' className='px-4 py-2 text-center font-bold text-lg rounded-full shadow-md shadow-black/30 text-white dark:text-white bg-green-600'>
-            Reportar Problema
-          </Link>
-        </div>
-      </div>
+    return (
+        <>
+            {/* Seção de Boas-Vindas */}
+            <section className="min-h-[calc(80vh-81px)] mt-[81px] flex items-center justify-center px-8 py-12 bg-linear-to-b from-green-100 to-white dark:from-green-300/15 dark:to-neutral-950">
+                <div className="w-full max-w-3xl text-center">
+                    <div className="mb-6 flex justify-center">
+                        <FaLeaf className="w-16 h-16 text-green-600 dark:text-green-500" />
+                    </div>
+                    <h1 className="text-4xl md:text-5xl font-bold mb-4">
+                        Bem-vindo ao Reporte Aqui
+                    </h1>
+                    <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 mb-8 max-w-2xl mx-auto">
+                        Sua plataforma colaborativa para reportar problemas de
+                        saneamento básico e meio ambiente em Anápolis. Juntos,
+                        podemos construir uma cidade mais limpa e sustentável.
+                    </p>
+                    <p className="text-base text-neutral-500 dark:text-neutral-400">
+                        Reporte problemas, acompanhe soluções e faça parte da
+                        transformação da nossa cidade.
+                    </p>
+                </div>
+            </section>
 
-      <div className="gap-y-8 py-8 px-8  flex flex-col items-center">
-        <div className="w-full max-w-200 px-4 py-8 gap-y-8 flex flex-col items-center gap-y-4 border-2 border-black/10 bg-neutral-100 dark:bg-neutral-900 rounded-4xl">
-          <h1 className="text-xl font-bold text-center">
-            Comunicados
-          </h1>
-          <h3 className="text-sm text-center font-medium text-neutral-600 dark:text-neutral-400">
-            Veja alguns dos comunicados mais recentes
-          </h3>
+            {/* Seção de Acesso Rápido */}
+            <section className="py-12 px-8">
+                <div className="max-w-3xl mx-auto p-6 shadow-lg shadow-black/10 dark:shadow-white/10 rounded-2xl border-2 border-black/10 dark:border-white/10 bg-neutral-100 dark:bg-neutral-950">
+                    <h2 className="text-3xl font-bold text-center mb-8">
+                      Faça parte da mudança!
+                    </h2>
+                    <h4 className="text-center mb-8 text-neutral-700 dark:text-neutral-300">
+                      Reporte problemas de saneamento ou ambiental e ajude a construir uma Anápolis melhor para todos.
+                    </h4>
+                    <div className="flex sm:flex-row flex-col gap-6 items-center justify-center">
+                        <Link
+                            to="/report"
+                            className="w-52 flex items-center justify-center p-3 gap-2 bg-red-500 hover:bg-red-600 rounded-lg"
+                        >
+                            <FaExclamationTriangle className="fill-white stroke-white"/>
+                            <h3 className="font-bold text-white">
+                                Fazer Denúncia
+                            </h3>
+                        </Link>
 
-          <div className="w-full grid card-grid gap-4">
-            <Notices title={'Esgoto'} body={'Problema resolvido'}>
-              <FaWrench />
-            </Notices>
+                        <button
+                            onClick={() => setShowChat(!showChat)}
+                            className="w-52 flex items-center justify-center p-3 gap-2 hover:cursor-pointer bg-blue-500 hover:bg-blue-600 rounded-lg"
+                        >
+                            <FiMessageCircle className="stroke-white fill-white" />
+                            <h3 className="font-bold text-white">
+                                Falar com Atendente
+                            </h3>
+                        </button>
+                    </div>
+                </div>
+            </section>
 
-            <Notices title={'Esgoto'} body={'Problema resolvido'}>
-              <FaWrench />
-            </Notices>
+            {/* Seção de Comunicados Recentes */}
+            <section className="py-12 px-8">
+                <div className="max-w-5xl mx-auto">
+                    <div className="flex sm:flex-row flex-col items-center justify-between gap-y-4 mb-8">
+                        <h2 className="text-3xl font-bold">
+                            Comunicados Recentes
+                        </h2>
+                        <div className="flex items-center gap-2 text-green-600 dark:text-green-500">
+                            <FaCheckCircle className="w-6 h-6" />
+                            <span className="text-lg font-semibold">
+                                {problemsResolved.toLocaleString()} problemas
+                                resolvidos
+                            </span>
+                        </div>
+                    </div>
 
-            <Notices title={'Esgoto'} body={'Problema resolvido'}>
-              <FaWrench />
-            </Notices>
-          </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
+                        {recentNotices.map((notice) => (
+                            <Link
+                                key={notice.id}
+                                to="/"
+                                className="block hover:scale-105"
+                            >
+                                <Notices
+                                    title={notice.title}
+                                    body={notice.body}
+                                >
+                                    {notice.icon}
+                                </Notices>
+                            </Link>
+                        ))}
+                    </div>
 
-          <div>
-            <Link to='/' className='text-sm text-center font-medium shadow-md shadow-black/30 bg-green-600 text-white px-4 py-2 rounded-full'>
-              Ver mais...
-            </Link>
-          </div>
-          
+                    <div className="text-center">
+                        <Link
+                            to="/"
+                            className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors"
+                        >
+                            Ver Mais
+                            <FiTrendingUp />
+                        </Link>
+                    </div>
+                </div>
+            </section>
 
-          <div className="w-full flex items-center justify-center p-2 gap-4 rounded-xl shadow-lg bg-green-600 shadow-black/10">
-            <FiTrendingUp className='w-8 h-8 stroke-white fill-none'/>
-            <div className='flex flex-col'>
-              <h2 className='font-bold text-lg text-white'>847 Problemas Resolvidos</h2>
-              <h4 className='font-medium text-sm text-white'>Desde o lançamento da plataforma</h4>
-            </div>
-          </div>
-        </div>
-      </div>
+            {/* Seção Promovendo Governo/Político */}
+            <section className="py-12 px-4">
+                <div className="max-w-5xl p-4 mx-auto text-center rounded-2xl shadow-lg border-2 bg-neutral-100 dark:bg-neutral-950 border-black/10 dark:border-white/10 dark:shadow-white/15">
+                    <div className="mb-6 flex justify-center">
+                        <FaBuilding className="w-16 h-16 text-green-600 dark:text-green-500" />
+                    </div>
+                    <h2 className="text-3xl font-bold mb-4">
+                        Parceria com a Prefeitura de Anápolis
+                    </h2>
+                    <p className="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+                        Esta plataforma é resultado de uma parceria entre a
+                        sociedade civil e a Prefeitura Municipal de Anápolis.
+                        Juntos, trabalhamos para melhorar a qualidade de vida
+                        dos cidadãos através do saneamento básico e preservação
+                        do meio ambiente.
+                    </p>
+                    <p className="text-base text-neutral-600 dark:text-neutral-400">
+                        O governo municipal está comprometido em resolver os
+                        problemas reportados e tornar Anápolis uma cidade mais
+                        sustentável e limpa para todos.
+                    </p>
+                </div>
+            </section>
 
-      <div className="gap-y-8 py-8 px-8 flex flex-col items-center">
-        <div className="w-full max-w-200 px-4 py-8 flex flex-col gap-y-4 border shadow-md border-black/20 bg-blue-600 rounded-4xl shadow-black/20">
-          <div className="flex items-center justify-center gap-4">
-            <div className="p-2 bg-white rounded-full">
-              <FaUser className='w-6 h-6 stroke-blue-600 fill-blue-600'/>
-            </div>
+            {/* Seção Promovendo Prestadora de Serviço */}
+            <section className="py-12 px-4">
+                <div className="max-w-5xl mx-auto text-center p-4 rounded-2xl shadow-lg border-2 bg-neutral-100 dark:bg-neutral-950 border-black/10 dark:border-white/10 dark:shadow-white/15">
+                    <div className="mb-6 flex justify-center">
+                        <FaWater className="w-16 h-16 text-cyan-600 dark:text-cyan-500" />
+                    </div>
+                    <h2 className="text-3xl font-bold mb-4">
+                        Nossa Parceira de Saneamento
+                    </h2>
+                    <p className="text-lg text-neutral-700 dark:text-neutral-300 mb-6">
+                        Trabalhamos em conjunto com a prestadora de serviços de
+                        saneamento de Anápolis para garantir respostas rápidas e
+                        eficientes aos problemas reportados.
+                    </p>
+                    <p className="text-base text-neutral-600 dark:text-neutral-400">
+                        A prestadora está comprometida em atender todas as
+                        denúncias relacionadas a água, esgoto e saneamento
+                        básico, priorizando a qualidade dos serviços prestados à
+                        população.
+                    </p>
+                </div>
+            </section>
 
-            <h2 className="text-lg font-bold text-start text-white">
-              Prefeito Marcio
-            </h2>
-          </div>
+            {/* Botão Flutuante de Chat */}
+            <button
+                onClick={() => setShowChat(!showChat)}
+                className="fixed bottom-6 right-6 w-16 h-16 bg-green-600 text-white rounded-full shadow-lg hover:bg-green-700 transition-all hover:scale-110 flex items-center justify-center z-50"
+                aria-label="Abrir chat"
+            >
+                <HiChatBubbleLeftRight className="w-8 h-8" />
+            </button>
 
-          <div className="p-2 bg-blue-500 rounded-lg shadow-inner shadow-black/10">
-            <h4 className="text-sm text-center text-white">
-              Comprometida com a transparência e eficiência no atendimento às demandas da população
-            </h4>
-          </div>
-        </div>
-      </div>
-
-      <div className="gap-y-8 py-8 px-8  flex flex-col items-center">
-        <div className="w-full max-w-200 px-4 py-8 flex flex-col gap-y-4 border-2 border-black/10 bg-neutral-100 dark:bg-neutral-900 rounded-4xl ">
-          <h1 className="text-xl font-bold text-center">
-            Saneago
-          </h1>
-          <h3 className="text-sm text-center text-neutral-600 dark:text-neutral-400">
-            Companhia de Saneamento de Goiás
-          </h3>
-
-          <h3 className="text-sm text-center text-neutral-600 dark:text-neutral-400">
-            A SANEAGO é nossa parceira estratégica na execução dos serviços de água e esgoto em Anápolis. Com profissionais qualificados e equipamentos modernos, garantimos soluções rápidas e eficazes para todos os reportes recebidos.
-          </h3>
-
-          <div className="w-full flex items-center justify-center gap-4">
-            <div className="flex flex-col items-center justify-center">
-              <h1 className="text-md font-bold text-orange-500">
-                24H
-              </h1>
-              <h4 className="text-sm text-center text-neutral-700 dark:text-neutral-300">
-                Atendimento
-              </h4>
-            </div>
-
-            <div className="flex flex-col items-center justify-center">
-              <h1 className="text-md font-bold text-orange-500">
-                90%
-              </h1>
-              <h4 className="text-sm text-center text-neutral-700 dark:text-neutral-300">
-                Eficiencia
-              </h4>
-            </div>
-
-            <div className="flex flex-col items-center justify-center">
-              <h1 className="text-md font-bold text-orange-500">
-                15 anos
-              </h1>
-              <h4 className="text-sm text-center text-neutral-700 dark:text-neutral-300">
-                Experiencia
-              </h4>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  )
+            {/* Modal de Chat (simplificado) */}
+            {showChat && (
+                <div className="fixed bottom-24 right-6 w-80 h-96 bg-white dark:bg-neutral-800 rounded-lg shadow-2xl border-2 border-black/10 z-50 flex flex-col">
+                    <div className="flex items-center justify-between p-4 border-b border-neutral-200 dark:border-neutral-700">
+                        <h3 className="font-bold text-lg">
+                            Chat de Atendimento
+                        </h3>
+                        <button
+                            onClick={() => setShowChat(false)}
+                            className="text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300"
+                        >
+                            ✕
+                        </button>
+                    </div>
+                    <div className="flex-1 p-4 overflow-y-auto">
+                        <div className="text-center text-neutral-500 dark:text-neutral-400 py-8">
+                            <FaComments className="w-12 h-12 mx-auto mb-4" />
+                            <p>Conecte-se com um atendente</p>
+                            <p className="text-sm mt-2">
+                                Em breve você poderá conversar em tempo real
+                            </p>
+                        </div>
+                    </div>
+                    <div className="p-4 border-t border-neutral-200 dark:border-neutral-700">
+                        <div className="flex gap-2">
+                            <input
+                                type="text"
+                                placeholder="Digite sua mensagem..."
+                                className="flex-1 px-4 py-2 border border-neutral-300 dark:border-neutral-700 rounded-lg focus:ring-2 focus:ring-green-500 outline-none bg-white dark:bg-neutral-900"
+                                disabled
+                            />
+                            <button
+                                className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
+                                disabled
+                            >
+                                Enviar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </>
+    );
 }
