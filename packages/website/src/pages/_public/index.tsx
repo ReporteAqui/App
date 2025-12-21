@@ -3,7 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { FaLeaf, FaExclamationTriangle, FaCheckCircle } from "react-icons/fa";
 import { FiTrendingUp, FiMessageCircle } from "react-icons/fi";
-import Notices from "@/components/cards";
+import * as Cards from "@/components/cards";
 import { FaWrench, FaWater, FaTrash, FaBuilding } from "react-icons/fa";
 
 export const Route = createFileRoute("/_public/")({
@@ -75,7 +75,7 @@ function App() {
                     </h4>
                     <div className="flex sm:flex-row flex-col gap-6 items-center justify-center">
                         <Link
-                            to="/report"
+                            to="/reportar"
                             className="w-52 flex items-center justify-center p-3 gap-2 bg-red-500 hover:bg-red-600 rounded-lg"
                         >
                             <FaExclamationTriangle className="fill-white stroke-white"/>
@@ -85,7 +85,7 @@ function App() {
                         </Link>
 
                         <Link
-                            to="/contacts"
+                            to="/contatos"
                             className="w-52 flex items-center justify-center p-3 gap-2 hover:cursor-pointer bg-blue-500 hover:bg-blue-600 rounded-lg"
                         >
                             <FiMessageCircle className="stroke-white fill-white" />
@@ -120,12 +120,12 @@ function App() {
                                 to="/"
                                 className="block hover:scale-105"
                             >
-                                <Notices
+                                <Cards.Notices
                                     title={notice.title}
                                     body={notice.body}
                                 >
                                     {notice.icon}
-                                </Notices>
+                                </Cards.Notices>
                             </Link>
                         ))}
                     </div>

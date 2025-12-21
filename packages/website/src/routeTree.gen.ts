@@ -10,68 +10,79 @@
 
 import { Route as rootRouteImport } from './pages/__root'
 import { Route as PublicIndexRouteImport } from './pages/_public/index'
-import { Route as PublicContactsRouteImport } from './pages/_public/contacts'
-import { Route as PrivateReportRouteImport } from './pages/_private/report'
-import { Route as PublicAuthIndexRouteImport } from './pages/_public/auth/index'
+import { Route as PublicDenunciasRouteImport } from './pages/_public/denuncias'
+import { Route as PublicContatosRouteImport } from './pages/_public/contatos'
+import { Route as PrivateReportarRouteImport } from './pages/_private/reportar'
+import { Route as PublicAutenticacaoIndexRouteImport } from './pages/_public/autenticacao/index'
 
 const PublicIndexRoute = PublicIndexRouteImport.update({
   id: '/_public/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PublicContactsRoute = PublicContactsRouteImport.update({
-  id: '/_public/contacts',
-  path: '/contacts',
+const PublicDenunciasRoute = PublicDenunciasRouteImport.update({
+  id: '/_public/denuncias',
+  path: '/denuncias',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PrivateReportRoute = PrivateReportRouteImport.update({
-  id: '/_private/report',
-  path: '/report',
+const PublicContatosRoute = PublicContatosRouteImport.update({
+  id: '/_public/contatos',
+  path: '/contatos',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PublicAuthIndexRoute = PublicAuthIndexRouteImport.update({
-  id: '/_public/auth/',
-  path: '/auth/',
+const PrivateReportarRoute = PrivateReportarRouteImport.update({
+  id: '/_private/reportar',
+  path: '/reportar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PublicAutenticacaoIndexRoute = PublicAutenticacaoIndexRouteImport.update({
+  id: '/_public/autenticacao/',
+  path: '/autenticacao/',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/report': typeof PrivateReportRoute
-  '/contacts': typeof PublicContactsRoute
+  '/reportar': typeof PrivateReportarRoute
+  '/contatos': typeof PublicContatosRoute
+  '/denuncias': typeof PublicDenunciasRoute
   '/': typeof PublicIndexRoute
-  '/auth': typeof PublicAuthIndexRoute
+  '/autenticacao': typeof PublicAutenticacaoIndexRoute
 }
 export interface FileRoutesByTo {
-  '/report': typeof PrivateReportRoute
-  '/contacts': typeof PublicContactsRoute
+  '/reportar': typeof PrivateReportarRoute
+  '/contatos': typeof PublicContatosRoute
+  '/denuncias': typeof PublicDenunciasRoute
   '/': typeof PublicIndexRoute
-  '/auth': typeof PublicAuthIndexRoute
+  '/autenticacao': typeof PublicAutenticacaoIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/_private/report': typeof PrivateReportRoute
-  '/_public/contacts': typeof PublicContactsRoute
+  '/_private/reportar': typeof PrivateReportarRoute
+  '/_public/contatos': typeof PublicContatosRoute
+  '/_public/denuncias': typeof PublicDenunciasRoute
   '/_public/': typeof PublicIndexRoute
-  '/_public/auth/': typeof PublicAuthIndexRoute
+  '/_public/autenticacao/': typeof PublicAutenticacaoIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/report' | '/contacts' | '/' | '/auth'
+  fullPaths: '/reportar' | '/contatos' | '/denuncias' | '/' | '/autenticacao'
   fileRoutesByTo: FileRoutesByTo
-  to: '/report' | '/contacts' | '/' | '/auth'
+  to: '/reportar' | '/contatos' | '/denuncias' | '/' | '/autenticacao'
   id:
     | '__root__'
-    | '/_private/report'
-    | '/_public/contacts'
+    | '/_private/reportar'
+    | '/_public/contatos'
+    | '/_public/denuncias'
     | '/_public/'
-    | '/_public/auth/'
+    | '/_public/autenticacao/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  PrivateReportRoute: typeof PrivateReportRoute
-  PublicContactsRoute: typeof PublicContactsRoute
+  PrivateReportarRoute: typeof PrivateReportarRoute
+  PublicContatosRoute: typeof PublicContatosRoute
+  PublicDenunciasRoute: typeof PublicDenunciasRoute
   PublicIndexRoute: typeof PublicIndexRoute
-  PublicAuthIndexRoute: typeof PublicAuthIndexRoute
+  PublicAutenticacaoIndexRoute: typeof PublicAutenticacaoIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -83,35 +94,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PublicIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_public/contacts': {
-      id: '/_public/contacts'
-      path: '/contacts'
-      fullPath: '/contacts'
-      preLoaderRoute: typeof PublicContactsRouteImport
+    '/_public/denuncias': {
+      id: '/_public/denuncias'
+      path: '/denuncias'
+      fullPath: '/denuncias'
+      preLoaderRoute: typeof PublicDenunciasRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_private/report': {
-      id: '/_private/report'
-      path: '/report'
-      fullPath: '/report'
-      preLoaderRoute: typeof PrivateReportRouteImport
+    '/_public/contatos': {
+      id: '/_public/contatos'
+      path: '/contatos'
+      fullPath: '/contatos'
+      preLoaderRoute: typeof PublicContatosRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_public/auth/': {
-      id: '/_public/auth/'
-      path: '/auth'
-      fullPath: '/auth'
-      preLoaderRoute: typeof PublicAuthIndexRouteImport
+    '/_private/reportar': {
+      id: '/_private/reportar'
+      path: '/reportar'
+      fullPath: '/reportar'
+      preLoaderRoute: typeof PrivateReportarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_public/autenticacao/': {
+      id: '/_public/autenticacao/'
+      path: '/autenticacao'
+      fullPath: '/autenticacao'
+      preLoaderRoute: typeof PublicAutenticacaoIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  PrivateReportRoute: PrivateReportRoute,
-  PublicContactsRoute: PublicContactsRoute,
+  PrivateReportarRoute: PrivateReportarRoute,
+  PublicContatosRoute: PublicContatosRoute,
+  PublicDenunciasRoute: PublicDenunciasRoute,
   PublicIndexRoute: PublicIndexRoute,
-  PublicAuthIndexRoute: PublicAuthIndexRoute,
+  PublicAutenticacaoIndexRoute: PublicAutenticacaoIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

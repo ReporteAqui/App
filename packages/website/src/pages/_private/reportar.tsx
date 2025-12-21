@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useRef } from "react";
 
-export const Route = createFileRoute("/_private/report")({
+export const Route = createFileRoute("/_private/reportar")({
     component: RouteComponent,
 });
 

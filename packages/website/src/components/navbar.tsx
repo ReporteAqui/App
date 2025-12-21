@@ -1,10 +1,11 @@
 import "@css/navbar.css";
 import { Link } from "@tanstack/react-router";
 import useMatchMedia from "@/hooks/useMatchMedia";
-import useTheme, { type Theme } from "@/hooks/useTheme";
+import useTheme from "@/hooks/useTheme";
 import { FaSun, FaMoon, FaBars, FaLeaf, FaUser } from "react-icons/fa";
 import useShowMenu from "@/hooks/useShowMenu";
 import { FaX } from "react-icons/fa6";
+import type { Theme } from "@types";
 
 function desktop(theme: Theme, toggleTheme: () => void) {
     return (
@@ -17,8 +18,8 @@ function desktop(theme: Theme, toggleTheme: () => void) {
 
                 <div className="nav-menu">
                     <Link to="/">Inicio</Link>
-                    <Link to="/">Forum</Link>
-                    <Link to="/contacts">Contato</Link>
+                    <Link to="/denuncias">Denuncias</Link>
+                    <Link to="/contatos">Contato</Link>
                 </div>
 
                 <div className="nav-action gap-x-2">
@@ -33,7 +34,7 @@ function desktop(theme: Theme, toggleTheme: () => void) {
                             <FaSun className="stroke-yellow-300 fill-yellow-300 w-6 h-6" />
                         )}
                     </button>
-                    <Link to='/auth' className="p-2 rounded-full hover:shadow-inner hover:shadow-black/10 hover:bg-black/10 hover:dark:bg-white/10">
+                    <Link to='/autenticacao' className="p-2 rounded-full hover:shadow-inner hover:shadow-black/10 hover:bg-black/10 hover:dark:bg-white/10">
                         <FaUser className="stroke-green-500 fill-green-500 w-6 h-6" />
                     </Link>
                 </div>
@@ -85,19 +86,19 @@ function mobile(
                 <div
                     className={`nav-menu-mobile ${
                         showMenu
-                            ? "h-53.5 mt-4 opacity-100 pointer-events-auto"
+                            ? "h-54 mt-4 opacity-100 pointer-events-auto"
                             : "h-0 opacity-0 pointer-events-none"
                     }`}
                 >
                     <div className="flex justify-end">
-                        <Link to='/auth' className="p-2 rounded-full shadow-inner bg-green-600">
+                        <Link to='/autenticacao' className="p-2 rounded-full shadow-inner bg-green-600">
                             <FaUser className="stroke-white fill-white w-6 h-6" />
                         </Link>
                     </div>
 
                     <Link to="/">Inicio</Link>
-                    <Link to="/">Forum</Link>
-                    <Link to="/contacts">Contato</Link>
+                    <Link to="/denuncias">Denuncias</Link>
+                    <Link to="/contatos">Contato</Link>
                 </div>
             </div>
         </nav>

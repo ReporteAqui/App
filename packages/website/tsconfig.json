@@ -23,6 +23,7 @@
 		"rootDir": ".",
     "paths": {
       "@/*": ["./src/*"],
+      "@types": ["./src/@types/index.d.ts"],
       "@css/*": ["./src/css/*"],
       "@components/*": ["./src/components/*"],
       "@hooks/*": ["./src/hooks/*"]

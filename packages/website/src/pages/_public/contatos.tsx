@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FiMessageCircle } from "react-icons/fi";
 import { FaComments } from "react-icons/fa6";
 
-export const Route = createFileRoute("/_public/contacts")({
+export const Route = createFileRoute("/_public/contatos")({
     component: RouteComponent,
 });
 
