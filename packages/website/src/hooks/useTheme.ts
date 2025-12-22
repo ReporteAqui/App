@@ -1,29 +1,30 @@
 import { useEffect, useState } from 'react';
 import type { Theme } from '@types';
 
+function getStoredTheme(): Theme {
+    if (typeof window === 'undefined') return 'light';
+
+    const stored = localStorage.getItem('theme');
+    if (stored === 'dark' || stored === 'light') return stored;
+
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return prefersDark ? 'dark' : 'light';
+}
+
 export default function useTheme() {
-    const [theme, setTheme] = useState<Theme>(function() {
-        if (typeof window !== 'undefined') {
-            const stored = localStorage.getItem('theme') as Theme;
-            if (stored) return stored;
-            if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
-        }
-        return 'light';
-    });
+    const [theme, setTheme] = useState<Theme>(getStoredTheme);
 
     useEffect(function() {
+        if (typeof window === 'undefined') return;
+
         const root = window.document.documentElement;
-        if (theme === 'dark') {
-            root.classList.add('dark');
-        } else {
-            root.classList.remove('dark');
-        }
+        root.classList.toggle('dark', theme === 'dark');
         localStorage.setItem('theme', theme);
     }, [theme]);
 
-    const toggleTheme = () => {
+    function toggleTheme() {
         setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
-    };
+    }
 
     return { theme, toggleTheme };
 }

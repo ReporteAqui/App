@@ -1,42 +1,13 @@
 import "@/styles.css";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
 import { FaLeaf, FaExclamationTriangle, FaCheckCircle } from "react-icons/fa";
 import { FiTrendingUp, FiMessageCircle } from "react-icons/fi";
 import * as Cards from "@/components/cards";
-import { FaWrench, FaWater, FaTrash, FaBuilding } from "react-icons/fa";
+import { FaWater, FaBuilding } from "react-icons/fa";
 
 export const Route = createFileRoute("/_public/")({
     component: App,
 });
-
-// Dados mockados dos comunicados recentes
-const recentNotices = [
-    {
-        id: 1,
-        title: "Esgoto Resolvido - Rua das Flores",
-        body: "Problema de esgoto a céu aberto foi resolvido com sucesso na Rua das Flores, Centro.",
-        icon: <FaWater className="w-12 h-12 text-blue-500" />,
-    },
-    {
-        id: 2,
-        title: "Lixo Coletado - Parque Ipiranga",
-        body: "Acúmulo de lixo no Parque Ipiranga foi removido pela equipe de limpeza.",
-        icon: <FaTrash className="w-12 h-12 text-green-500" />,
-    },
-    {
-        id: 3,
-        title: "Vazamento Corrigido - Av. Brasil",
-        body: "Vazamento de água na Avenida Brasil foi reparado pela concessionária.",
-        icon: <FaWater className="w-12 h-12 text-cyan-500" />,
-    },
-    {
-        id: 4,
-        title: "Bueiro Desentupido - Rua Goiás",
-        body: "Bueiro na Rua Goiás foi desentupido e está funcionando normalmente.",
-        icon: <FaWrench className="w-12 h-12 text-orange-500" />,
-    },
-];
 
 function App() {
     const problemsResolved = 1247; // Contador de problemas resolvidos
@@ -114,7 +85,7 @@ function App() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-8">
-                        {recentNotices.map((notice) => (
+                        {notices.recent.map((notice) => (
                             <Link
                                 key={notice.id}
                                 to="/"
@@ -124,7 +95,7 @@ function App() {
                                     title={notice.title}
                                     body={notice.body}
                                 >
-                                    {notice.icon}
+                                    <FaWater className="w-12 h-12 text-blue-500" />
                                 </Cards.Notices>
                             </Link>
                         ))}

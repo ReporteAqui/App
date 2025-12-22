@@ -95,7 +95,7 @@ export function Reports({
                     </div>
                     <button
                         onClick={onReact}
-                        className="px-4 py-1 bg-purple-600 text-white rounded-lg text-sm font-medium hover:bg-purple-700 transition-colors"
+                        className="px-4 py-1 bg-green-600 text-white rounded-lg text-sm font-medium hover:bg-green-700 hover:cursor-pointer"
                     >
                         Reagir
                     </button>

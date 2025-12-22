@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import React, { useState } from "react";
 
 export const Route = createFileRoute("/_public/autenticacao/")({
     component: RouteComponent,
@@ -8,12 +8,13 @@ export const Route = createFileRoute("/_public/autenticacao/")({
 function RouteComponent() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [remeber, setRemember] = useState(false);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
         // Adicione sua lógica de autenticação aqui
         console.log("Login attempt:", { email, password });
-    };
+    }
 
     return (
         <div className="min-h-[calc((100vh-81px))] mt-[81px] flex items-center justify-center px-4 py-12">
@@ -70,6 +71,7 @@ function RouteComponent() {
                                 <input
                                     id="remember"
                                     type="checkbox"
+                                    onChange={(e) => setRemember(e.target.checked)}
                                     className="h-4 w-4 text-green-600 focus:ring-green-500 accent-green-500 border-neutral-300 rounded"
                                 />
                                 <label
@@ -90,7 +92,7 @@ function RouteComponent() {
 
                         <button
                             type="submit"
-                            className="w-full bg-green-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                            className="w-full bg-green-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-green-700 hover:cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
                         >
                             Entrar
                         </button>

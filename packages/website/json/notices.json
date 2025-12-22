@@ -1,0 +1,24 @@
+{
+    "recent": [
+        {
+            "id": 1,
+            "title": "Esgoto Resolvido - Rua das Flores",
+            "body": "Problema de esgoto a céu aberto foi resolvido com sucesso na Rua das Flores, Centro."
+        },
+        {
+            "id": 2,
+            "title": "Lixo Coletado - Parque Ipiranga",
+            "body": "Acúmulo de lixo no Parque Ipiranga foi removido pela equipe de limpeza."
+        },
+        {
+            "id": 3,
+            "title": "Vazamento Corrigido - Av. Brasil",
+            "body": "Vazamento de água na Avenida Brasil foi reparado pela concessionária."
+        },
+        {
+            "id": 4,
+            "title": "Bueiro Desentupido - Rua Goiás",
+            "body": "Bueiro na Rua Goiás foi desentupido e está funcionando normalmente."
+        }
+    ]
+}

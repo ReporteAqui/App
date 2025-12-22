@@ -32,17 +32,13 @@ function RouteComponent() {
         "Outro",
     ];
 
-    const handleInputChange = (
-        e: React.ChangeEvent<
-            HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-        >
-    ) => {
+    function handleInputChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
         const { name, value } = e.target;
         setFormData((prev) => ({
             ...prev,
             [name]: value,
         }));
-    };
+    }
 
     const handleFormSubmit = (e: React.FormEvent) => {
         e.preventDefault();

@@ -16,38 +16,39 @@ type ProblemType =
     | "Desmatamento"
     | "Outro";
 
+const problemTypes: ProblemType[] = [
+    "Esgoto a céu aberto",
+    "Lixo acumulado",
+    "Vazamento de água",
+    "Bueiro entupido",
+    "Água contaminada",
+    "Falta de saneamento",
+    "Poluição do ar",
+    "Desmatamento",
+    "Outro",
+];
+
 function RouteComponent() {
-    const [description, setDescription] = useState("");
     const [problemType, setProblemType] = useState<ProblemType | "">("");
+    const [description, setDescription] = useState("");
     const [address, setAddress] = useState("");
-    const [useGoogleMaps, setUseGoogleMaps] = useState(false);
     const [files, setFiles] = useState<File[]>([]);
+
+    const [useGoogleMaps, setUseGoogleMaps] = useState(false);
     const fileInputRef = useRef<HTMLInputElement>(null);
 
-    const problemTypes: ProblemType[] = [
-        "Esgoto a céu aberto",
-        "Lixo acumulado",
-        "Vazamento de água",
-        "Bueiro entupido",
-        "Água contaminada",
-        "Falta de saneamento",
-        "Poluição do ar",
-        "Desmatamento",
-        "Outro",
-    ];
-
-    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
         if (e.target.files) {
             const selectedFiles = Array.from(e.target.files);
             setFiles(selectedFiles);
         }
-    };
+    }
 
-    const handleRemoveFile = (index: number) => {
+    function handleRemoveFile(index: number) {
         setFiles(files.filter((_, i) => i !== index));
-    };
+    }
 
-    const handleSubmit = (e: React.FormEvent) => {
+    function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
         // Adicione sua lógica de envio aqui
         console.log("Denúncia:", {
@@ -56,7 +57,7 @@ function RouteComponent() {
             address,
             files,
         });
-    };
+    }
 
     return (
         <div className="min-h-[calc((100vh-81px))] mt-[81px] flex items-center justify-center px-4 py-12">
@@ -135,7 +136,7 @@ function RouteComponent() {
                                     onChange={handleFileChange}
                                     required={files.length === 0}
                                     multiple
-                                    className="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-700 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-green-600 file:text-white hover:file:bg-green-700 cursor-pointer"
+                                    className="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-700 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-green-600 file:text-white hover:file:bg-green-700 hover:cursor-pointer hover:file:cursor-pointer"
                                 />
                                 {files.length > 0 && (
                                     <div className="space-y-2">
@@ -152,7 +153,7 @@ function RouteComponent() {
                                                     onClick={() =>
                                                         handleRemoveFile(index)
                                                     }
-                                                    className="ml-2 text-red-600 hover:text-red-700 text-sm font-medium"
+                                                    className="ml-2 hover:cursor-pointer text-red-500 dark:text-red-600 hover:text-red-600 hover:dark:text-red-500 text-sm font-medium"
                                                 >
                                                     Remover
                                                 </button>
@@ -178,7 +179,7 @@ function RouteComponent() {
                                     onClick={() =>
                                         setUseGoogleMaps(!useGoogleMaps)
                                     }
-                                    className="text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300"
+                                    className="text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 hover:cursor-pointer"
                                 >
                                     {useGoogleMaps
                                         ? "Digitar manualmente"
@@ -218,7 +219,7 @@ function RouteComponent() {
 
                         <button
                             type="submit"
-                            className="w-full bg-green-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                            className="w-full bg-green-600 text-white py-3 px-4 rounded-lg font-medium hover:cursor-pointer hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
                         >
                             Enviar Denúncia
                         </button>

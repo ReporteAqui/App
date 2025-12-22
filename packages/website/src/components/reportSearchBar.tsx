@@ -30,7 +30,7 @@ const regions: Region[] = [
     "Vila São João",
 ];
 
-export default function SearchBar({
+export default function ReportSearchBar({
     onSearch,
     onRegionsChange,
     onProblemTypesChange,
@@ -46,16 +46,15 @@ export default function SearchBar({
         ProblemType[]
     >([]);
     const [showRegionDropdown, setShowRegionDropdown] = useState(false);
-    const [showProblemTypeDropdown, setShowProblemTypeDropdown] =
-        useState(false);
+    const [showProblemTypeDropdown, setShowProblemTypeDropdown] = useState(false);
 
-    const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    function handleSearchChange(e: React.ChangeEvent<HTMLInputElement>) {
         const value = e.target.value;
         setSearchTerm(value);
         onSearch?.(value);
     };
 
-    const toggleRegion = (region: Region) => {
+    function toggleRegion(region: Region) {
         const newRegions = selectedRegions.includes(region)
             ? selectedRegions.filter((r) => r !== region)
             : [...selectedRegions, region];
@@ -63,7 +62,7 @@ export default function SearchBar({
         onRegionsChange?.(newRegions);
     };
 
-    const toggleProblemType = (type: ProblemType) => {
+    function toggleProblemType(type: ProblemType) {
         const newTypes = selectedProblemTypes.includes(type)
             ? selectedProblemTypes.filter((t) => t !== type)
             : [...selectedProblemTypes, type];
@@ -71,24 +70,18 @@ export default function SearchBar({
         onProblemTypesChange?.(newTypes);
     };
 
-    const handlePageChange = (page: number) => {
+    function handlePageChange(page: number) {
         if (page >= 1 && page <= totalPages) {
             onPageChange?.(page);
         }
     };
 
-    const handleItemsPerPageChange = (
-        e: React.ChangeEvent<HTMLSelectElement>
-    ) => {
+    function handleItemsPerPageChange (e: React.ChangeEvent<HTMLSelectElement>) {
         const value = parseInt(e.target.value);
         onItemsPerPageChange?.(value);
     };
 
-    const getDisplayText = (
-        items: string[],
-        placeholder: string,
-        maxDisplay: number = 2
-    ) => {
+    function getDisplayText(items: string[], placeholder: string, maxDisplay: number = 2) {
         if (items.length === 0) return placeholder;
         if (items.length <= maxDisplay)
             return items.join(", ");
@@ -248,7 +241,7 @@ export default function SearchBar({
                     <select
                         value={itemsPerPage}
                         onChange={handleItemsPerPageChange}
-                        className="px-3 py-1 border border-neutral-300 dark:border-neutral-700 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none bg-neutral-50 dark:bg-neutral-800 text-sm"
+                        className="px-3 py-1 border border-neutral-300 dark:border-neutral-700 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none bg-neutral-50 dark:bg-neutral-800 text-sm hover:cursor-pointer"
                     >
                         <option value={10}>10</option>
                         <option value={20}>20</option>
@@ -264,7 +257,7 @@ export default function SearchBar({
                     <button
                         onClick={() => handlePageChange(currentPage - 1)}
                         disabled={currentPage === 1}
-                        className="p-2 border border-neutral-300 dark:border-neutral-700 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                        className="p-2 border border-neutral-300 dark:border-neutral-700 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                         aria-label="Página anterior"
                     >
                         <FaChevronLeft className="w-4 h-4" />
@@ -286,9 +279,9 @@ export default function SearchBar({
                                 )}
                                 <button
                                     onClick={() => handlePageChange(page)}
-                                    className={`px-4 py-2 border rounded-lg transition-colors ${
+                                    className={`px-4 py-2 border rounded-lg hover:cursor-pointer ${
                                         currentPage === page
-                                            ? "bg-purple-600 text-white border-purple-600"
+                                            ? "bg-green-600 text-white border-green-600"
                                             : "border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-700"
                                     }`}
                                 >
@@ -300,7 +293,7 @@ export default function SearchBar({
                     <button
                         onClick={() => handlePageChange(currentPage + 1)}
                         disabled={currentPage === totalPages}
-                        className="p-2 border border-neutral-300 dark:border-neutral-700 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                        className="p-2 border border-neutral-300 dark:border-neutral-700 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-700 disabled:opacity-50 disabled:cursor-not-allowed hover:cursor-pointer"
                         aria-label="Próxima página"
                     >
                         <FaChevronRight className="w-4 h-4" />
