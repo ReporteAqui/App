@@ -1,11 +1,14 @@
 import constantsJson from "../json/constants.json";
 import noticesJson from "../json/notices.json";
+import reportsJson from "../json/reports.json";
 
 declare global {
   var constants: typeof constantsJson;
   var notices: typeof noticesJson;
+  var reports: typeof reportsJson;
 }
 Object.assign(globalThis, Object.freeze({
     constants: constantsJson,
-    notices: noticesJson
+    notices: noticesJson,
+    reports: reportsJson
 }));

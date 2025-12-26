@@ -1,0 +1,223 @@
+[
+    {
+        "title": "Esgoto a céu aberto na Rua das Flores",
+        "status": "Em análise",
+        "statusColor": "yellow",
+        "description": "Há mais de uma semana que o esgoto está correndo a céu aberto na Rua das Flores, próximo ao número 123. O mau cheiro está insuportável e já está afetando a saúde dos moradores da região.",
+        "problemType": "Esgoto a céu aberto",
+        "location": "Centro",
+        "timeAgo": "há 2 horas",
+        "likes": 15,
+        "dislikes": 2
+    },
+    {
+        "title": "Lixo acumulado em frente ao mercado",
+        "status": "Resolvido",
+        "statusColor": "green",
+        "description": "Grande quantidade de lixo estava acumulada em frente ao mercado do Setor Central, causando mau cheiro e atraindo animais. A situação foi resolvida pela prefeitura.",
+        "problemType": "Lixo acumulado",
+        "location": "Setor Central",
+        "timeAgo": "há 1 dia",
+        "likes": 8,
+        "dislikes": 0
+    },
+    {
+        "title": "Vazamento de água na Avenida Principal",
+        "status": "Em andamento",
+        "statusColor": "blue",
+        "description": "Vazamento de água na Avenida Principal, altura do número 456. A água está desperdiçando há vários dias e já formou uma poça grande na calçada.",
+        "problemType": "Vazamento de água",
+        "location": "Setor Oeste",
+        "timeAgo": "há 5 horas",
+        "likes": 12,
+        "dislikes": 1
+    },
+    {
+        "title": "Bueiro entupido na Rua do Comércio",
+        "status": "Pendente",
+        "statusColor": "red",
+        "description": "Bueiro completamente entupido na Rua do Comércio, próximo à praça. Quando chove, a água não escoa e alaga toda a rua, impedindo a passagem de veículos e pedestres.",
+        "problemType": "Bueiro entupido",
+        "location": "Setor Sul",
+        "timeAgo": "há 3 dias",
+        "likes": 20,
+        "dislikes": 3
+    },
+    {
+        "title": "Água com cheiro e gosto estranho",
+        "status": "Em análise",
+        "statusColor": "yellow",
+        "description": "A água que chega nas torneiras está com cheiro forte de cloro e gosto estranho. Vários moradores do Setor Universitário estão relatando o mesmo problema.",
+        "problemType": "Água contaminada",
+        "location": "Setor Universitário",
+        "timeAgo": "há 6 horas",
+        "likes": 25,
+        "dislikes": 1
+    },
+    {
+        "title": "Falta de saneamento básico na Vila",
+        "status": "Pendente",
+        "statusColor": "red",
+        "description": "A Vila Formosa ainda não possui rede de esgoto. Os moradores precisam usar fossas sépticas, que muitas vezes transbordam e causam problemas de saúde pública.",
+        "problemType": "Falta de saneamento",
+        "location": "Vila Formosa",
+        "timeAgo": "há 1 semana",
+        "likes": 45,
+        "dislikes": 5
+    },
+    {
+        "title": "Queimadas causando poluição do ar",
+        "status": "Em andamento",
+        "statusColor": "blue",
+        "description": "Queimadas constantes em área próxima ao Setor Norte estão causando poluição do ar. A fumaça está afetando a respiração de moradores, especialmente idosos e crianças.",
+        "problemType": "Poluição do ar",
+        "location": "Setor Norte",
+        "timeAgo": "há 4 horas",
+        "likes": 18,
+        "dislikes": 2
+    },
+    {
+        "title": "Desmatamento ilegal em área verde",
+        "status": "Em análise",
+        "statusColor": "yellow",
+        "description": "Área verde próxima ao Jardim das Américas está sendo desmatada ilegalmente. Várias árvores foram cortadas sem autorização, causando impacto ambiental.",
+        "problemType": "Desmatamento",
+        "location": "Jardim das Américas",
+        "timeAgo": "há 1 dia",
+        "likes": 32,
+        "dislikes": 4
+    },
+    {
+        "title": "Esgoto vazando na calçada",
+        "status": "Resolvido",
+        "statusColor": "green",
+        "description": "Esgoto estava vazando na calçada da Rua Bela Vista, criando um risco de acidentes. O problema foi corrigido pela equipe de manutenção.",
+        "problemType": "Esgoto a céu aberto",
+        "location": "Setor Bela Vista",
+        "timeAgo": "há 2 dias",
+        "likes": 10,
+        "dislikes": 0
+    },
+    {
+        "title": "Lixo espalhado no parque",
+        "status": "Pendente",
+        "statusColor": "red",
+        "description": "Grande quantidade de lixo espalhado pelo parque do Setor Maracananzinho. Latas, garrafas e embalagens estão espalhadas pela área de lazer, prejudicando o meio ambiente.",
+        "problemType": "Lixo acumulado",
+        "location": "Setor Maracananzinho",
+        "timeAgo": "há 8 horas",
+        "likes": 14,
+        "dislikes": 1
+    },
+    {
+        "title": "Vazamento em tubulação principal",
+        "status": "Em andamento",
+        "statusColor": "blue",
+        "description": "Vazamento em tubulação principal de água próximo ao Setor Aeroporto. A água está jorrando e causando desperdício significativo de recursos hídricos.",
+        "problemType": "Vazamento de água",
+        "location": "Setor Aeroporto",
+        "timeAgo": "há 12 horas",
+        "likes": 22,
+        "dislikes": 2
+    },
+    {
+        "title": "Bueiros entupidos na avenida",
+        "status": "Em análise",
+        "statusColor": "yellow",
+        "description": "Múltiplos bueiros entupidos na Avenida Central. Durante as chuvas, a água não escoa adequadamente, causando alagamentos e riscos de acidentes.",
+        "problemType": "Bueiro entupido",
+        "location": "Vila Jaiara",
+        "timeAgo": "há 1 dia",
+        "likes": 16,
+        "dislikes": 3
+    },
+    {
+        "title": "Água turva e com sedimentos",
+        "status": "Pendente",
+        "statusColor": "red",
+        "description": "A água que chega nas residências da Vila São João está turva e com sedimentos visíveis. Moradores estão preocupados com a qualidade da água.",
+        "problemType": "Água contaminada",
+        "location": "Vila São João",
+        "timeAgo": "há 2 dias",
+        "likes": 28,
+        "dislikes": 4
+    },
+    {
+        "title": "Rede de esgoto inexistente",
+        "status": "Pendente",
+        "statusColor": "red",
+        "description": "A região ainda não possui rede de esgoto instalada. Os moradores dependem de soluções alternativas que não são adequadas para o volume de resíduos.",
+        "problemType": "Falta de saneamento",
+        "location": "Setor Central",
+        "timeAgo": "há 3 dias",
+        "likes": 35,
+        "dislikes": 6
+    },
+    {
+        "title": "Fumaça de indústria poluindo o ar",
+        "status": "Em análise",
+        "statusColor": "yellow",
+        "description": "Fumaça preta sendo liberada por uma indústria próxima ao Centro está poluindo o ar da região. Moradores relatam dificuldades respiratórias.",
+        "problemType": "Poluição do ar",
+        "location": "Centro",
+        "timeAgo": "há 7 horas",
+        "likes": 19,
+        "dislikes": 2
+    },
+    {
+        "title": "Corte de árvores sem autorização",
+        "status": "Em andamento",
+        "statusColor": "blue",
+        "description": "Árvores centenárias estão sendo cortadas sem autorização em área de preservação próxima ao Setor Sul. Ação está causando impacto ambiental significativo.",
+        "problemType": "Desmatamento",
+        "location": "Setor Sul",
+        "timeAgo": "há 10 horas",
+        "likes": 40,
+        "dislikes": 5
+    },
+    {
+        "title": "Esgoto correndo na rua",
+        "status": "Resolvido",
+        "statusColor": "green",
+        "description": "Esgoto estava correndo pela rua devido a uma tubulação rompida. A situação foi resolvida e a rua foi limpa pela equipe de manutenção.",
+        "problemType": "Esgoto a céu aberto",
+        "location": "Setor Oeste",
+        "timeAgo": "há 3 dias",
+        "likes": 11,
+        "dislikes": 0
+    },
+    {
+        "title": "Lixo não coletado há semanas",
+        "status": "Pendente",
+        "statusColor": "red",
+        "description": "O lixo não está sendo coletado há mais de duas semanas no Setor Universitário. Os sacos estão acumulando nas calçadas, causando mau cheiro e atraindo animais.",
+        "problemType": "Lixo acumulado",
+        "location": "Setor Universitário",
+        "timeAgo": "há 5 horas",
+        "likes": 30,
+        "dislikes": 3
+    },
+    {
+        "title": "Vazamento em hidrante",
+        "status": "Resolvido",
+        "statusColor": "green",
+        "description": "Hidrante estava com vazamento constante na Rua Principal. O problema foi identificado e corrigido pela equipe de manutenção da concessionária.",
+        "problemType": "Vazamento de água",
+        "location": "Jardim das Américas",
+        "timeAgo": "há 4 dias",
+        "likes": 7,
+        "dislikes": 0
+    },
+    {
+        "title": "Problema de drenagem na rua",
+        "status": "Outro",
+        "statusColor": "yellow",
+        "description": "Sistema de drenagem inadequado na Rua Nova está causando alagamentos frequentes. Quando chove, a água não escoa e invade as residências próximas.",
+        "problemType": "Outro",
+        "location": "Setor Bela Vista",
+        "timeAgo": "há 6 horas",
+        "likes": 13,
+        "dislikes": 1
+    }
+]
+
