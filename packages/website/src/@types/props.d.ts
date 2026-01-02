@@ -47,7 +47,7 @@ export type Region =
     | "Vila São João"
     | "Todos";
 
-export interface SearchBarProps {
+export interface SearchBarReportsProps {
     onSearch?: (searchTerm: string) => void;
     onRegionsChange?: (regions: Region[]) => void;
     onProblemTypesChange?: (types: ProblemType[]) => void;

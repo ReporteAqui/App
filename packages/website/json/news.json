@@ -1,0 +1,152 @@
+[
+    {
+        "tipo": "Notícia",
+        "titulo": "Prefeitura anuncia investimento de R$ 2 milhões em saneamento básico",
+        "data": "2024-01-15",
+        "breveResumo": "A prefeitura de Anápolis anunciou um novo investimento de R$ 2 milhões para melhorias no sistema de saneamento básico da cidade, com foco em áreas mais carentes."
+    },
+    {
+        "tipo": "Aviso",
+        "titulo": "Interrupção no fornecimento de água no Setor Central",
+        "data": "2024-01-20",
+        "breveResumo": "Aviso importante: haverá interrupção no fornecimento de água no Setor Central nesta quinta-feira, das 8h às 16h, para manutenção preventiva da rede."
+    },
+    {
+        "tipo": "Notícia",
+        "titulo": "Campanha de coleta de lixo eletrônico tem início em fevereiro",
+        "data": "2024-01-25",
+        "breveResumo": "A partir de fevereiro, a prefeitura iniciará uma campanha especial de coleta de lixo eletrônico em diversos pontos da cidade, promovendo o descarte correto."
+    },
+    {
+        "tipo": "Aviso",
+        "titulo": "Obras de drenagem na Avenida Principal podem causar trânsito",
+        "data": "2024-02-01",
+        "breveResumo": "Atenção motoristas: obras de drenagem na Avenida Principal podem causar lentidão no trânsito. A previsão de conclusão é de 30 dias."
+    },
+    {
+        "tipo": "Notícia",
+        "titulo": "Mais de 500 denúncias foram resolvidas no último mês",
+        "data": "2024-02-05",
+        "breveResumo": "A plataforma Reporte Aqui registrou a resolução de mais de 500 denúncias no último mês, demonstrando a eficácia da participação cidadã."
+    },
+    {
+        "tipo": "Aviso",
+        "titulo": "Mutirão de limpeza no Parque Ipiranga neste sábado",
+        "data": "2024-02-10",
+        "breveResumo": "Participe do mutirão de limpeza no Parque Ipiranga neste sábado, das 8h às 12h. Materiais serão fornecidos pela organização."
+    },
+    {
+        "tipo": "Notícia",
+        "titulo": "Nova estação de tratamento de esgoto é inaugurada",
+        "data": "2024-02-15",
+        "breveResumo": "Foi inaugurada uma nova estação de tratamento de esgoto que beneficiará mais de 10 mil habitantes da região do Setor Oeste."
+    },
+    {
+        "tipo": "Aviso",
+        "titulo": "Coleta seletiva será ampliada para novos bairros",
+        "data": "2024-02-20",
+        "breveResumo": "A partir de março, a coleta seletiva será ampliada para os bairros Vila Formosa, Vila Jaiara e Jardim das Américas. Confira os dias e horários."
+    },
+    {
+        "tipo": "Notícia",
+        "titulo": "Projeto de reflorestamento urbano ganha destaque nacional",
+        "data": "2024-02-25",
+        "breveResumo": "O projeto de reflorestamento urbano de Anápolis foi reconhecido nacionalmente e receberá recursos adicionais para expansão em 2024."
+    },
+    {
+        "tipo": "Aviso",
+        "titulo": "Manutenção programada na rede de esgoto do Centro",
+        "data": "2024-03-01",
+        "breveResumo": "Aviso: manutenção programada na rede de esgoto do Centro será realizada na próxima semana. Algumas ruas terão acesso temporariamente restrito."
+    },
+    {
+        "tipo": "Notícia",
+        "titulo": "Parceria público-privada melhora qualidade da água",
+        "data": "2024-03-05",
+        "breveResumo": "Uma nova parceria público-privada resultou em melhorias significativas na qualidade da água fornecida à população, com investimento em tecnologia de tratamento."
+    },
+    {
+        "tipo": "Aviso",
+        "titulo": "Campanha de conscientização sobre descarte de óleo",
+        "data": "2024-03-10",
+        "breveResumo": "Nova campanha alerta sobre os perigos de descartar óleo de cozinha na pia. Pontos de coleta estão disponíveis em diversos locais da cidade."
+    },
+    {
+        "tipo": "Notícia",
+        "titulo": "Sistema de monitoramento de qualidade do ar é instalado",
+        "data": "2024-03-15",
+        "breveResumo": "Anápolis ganha sistema de monitoramento em tempo real da qualidade do ar, com estações distribuídas estrategicamente pela cidade."
+    },
+    {
+        "tipo": "Aviso",
+        "titulo": "Vedação de bueiros será realizada em áreas prioritárias",
+        "data": "2024-03-20",
+        "breveResumo": "A prefeitura realizará vedação preventiva de bueiros em áreas prioritárias para evitar entupimentos durante o período de chuvas."
+    },
+    {
+        "tipo": "Notícia",
+        "titulo": "Plataforma Reporte Aqui ultrapassa 10 mil usuários",
+        "data": "2024-03-25",
+        "breveResumo": "A plataforma Reporte Aqui alcançou a marca de 10 mil usuários cadastrados, consolidando-se como principal ferramenta de participação cidadã."
+    },
+    {
+        "tipo": "Aviso",
+        "titulo": "Horário especial de coleta durante feriado",
+        "data": "2024-04-01",
+        "breveResumo": "Atenção: durante o feriado, a coleta de lixo terá horário especial. Confira o calendário atualizado no site da prefeitura."
+    },
+    {
+        "tipo": "Notícia",
+        "titulo": "Investimento em energia solar reduz custos públicos",
+        "data": "2024-04-05",
+        "breveResumo": "A instalação de painéis solares em prédios públicos resultou em economia de 30% nos custos de energia, recursos que serão reinvestidos em saneamento."
+    },
+    {
+        "tipo": "Aviso",
+        "titulo": "Obras de ampliação da rede de água podem afetar abastecimento",
+        "data": "2024-04-10",
+        "breveResumo": "Obras de ampliação da rede de água podem causar interrupções temporárias no abastecimento. Avisos serão enviados com antecedência."
+    },
+    {
+        "tipo": "Notícia",
+        "titulo": "Programa de educação ambiental atinge 5 mil estudantes",
+        "data": "2024-04-15",
+        "breveResumo": "O programa de educação ambiental da prefeitura já atingiu mais de 5 mil estudantes, promovendo conscientização sobre preservação e sustentabilidade."
+    },
+    {
+        "tipo": "Aviso",
+        "titulo": "Prazo para cadastro no programa de compostagem termina em maio",
+        "data": "2024-04-20",
+        "breveResumo": "Interessados em participar do programa de compostagem doméstica devem se cadastrar até o final de maio. Vagas limitadas."
+    },
+    {
+        "tipo": "Notícia",
+        "titulo": "Anápolis recebe prêmio de cidade sustentável",
+        "data": "2024-04-25",
+        "breveResumo": "Anápolis foi premiada como uma das cidades mais sustentáveis do estado, reconhecendo os esforços em saneamento básico e preservação ambiental."
+    },
+    {
+        "tipo": "Aviso",
+        "titulo": "Mutirão de limpeza de córregos será realizado em maio",
+        "data": "2024-05-01",
+        "breveResumo": "A prefeitura organizará mutirão de limpeza de córregos urbanos em maio. Voluntários podem se inscrever através da plataforma Reporte Aqui."
+    },
+    {
+        "tipo": "Notícia",
+        "titulo": "Nova tecnologia detecta vazamentos com precisão",
+        "data": "2024-05-05",
+        "breveResumo": "A concessionária de água implementou nova tecnologia que detecta vazamentos com precisão, reduzindo perdas e melhorando a eficiência do sistema."
+    },
+    {
+        "tipo": "Aviso",
+        "titulo": "Alteração no calendário de coleta de lixo reciclável",
+        "data": "2024-05-10",
+        "breveResumo": "A partir de junho, haverá alteração no calendário de coleta de lixo reciclável. Novo calendário estará disponível no site da prefeitura."
+    },
+    {
+        "tipo": "Notícia",
+        "titulo": "Parceria com universidade desenvolve soluções inovadoras",
+        "data": "2024-05-15",
+        "breveResumo": "Parceria entre prefeitura e universidade local resultou no desenvolvimento de soluções inovadoras para tratamento de resíduos e gestão de recursos hídricos."
+    }
+]

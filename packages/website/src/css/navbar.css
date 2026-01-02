@@ -7,7 +7,7 @@
 }
 
 .nav-title {
-    @apply flex gap-x-1 items-center;
+    @apply w-full flex gap-x-1 items-center;
 }
 
 .nav-title svg {
@@ -23,15 +23,15 @@
 }
 
 .nav-action {
-    @apply flex items-center justify-end gap-4;
+    @apply w-full flex items-center justify-end gap-4;
 }
 
 .nav-menu {
-    @apply flex items-center justify-center text-center font-semibold text-lg gap-3;
+    @apply flex items-center justify-center text-center font-semibold gap-2;
 }
 
 .nav-menu a {
-    @apply py-1 px-4 rounded-lg hover:shadow-inner hover:bg-black/10 hover:dark:bg-white/20;
+    @apply py-1 px-2.5 rounded-lg hover:shadow-inner hover:bg-black/10 hover:dark:bg-white/20;
 }
 
 .navbar-mobile {
@@ -39,7 +39,7 @@
 }
 
 .nav-desktop {
-    @apply w-full max-w-5xl px-8 grid grid-cols-3 items-center;
+    @apply w-full max-w-5xl px-4 grid grid-cols-3 items-center gap-2;
 }
 
 .nav-mobile {

@@ -1,4 +1,4 @@
-import type { ProblemType, Region, SearchBarProps } from "@types";
+import type { ProblemType, Region, SearchBarReportsProps } from "@types";
 import { useState } from "react";
 import { FaSearch, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -39,7 +39,7 @@ export default function ReportSearchBar({
     currentPage = 1,
     totalPages = 1,
     itemsPerPage = 10,
-}: SearchBarProps) {
+}: SearchBarReportsProps) {
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedRegions, setSelectedRegions] = useState<Region[]>([]);
     const [selectedProblemTypes, setSelectedProblemTypes] = useState<

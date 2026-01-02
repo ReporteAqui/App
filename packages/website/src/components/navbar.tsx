@@ -19,10 +19,11 @@ function desktop(theme: Theme, toggleTheme: () => void) {
                 <div className="nav-menu">
                     <Link to="/">Inicio</Link>
                     <Link to="/denuncias">Denuncias</Link>
+                    <Link to="/denuncias">Noticias</Link>
                     <Link to="/contatos">Contato</Link>
                 </div>
 
-                <div className="nav-action gap-x-2">
+                <div className="nav-action gap-x-2 pointer-events-auto">
                     <button
                         className="p-2 rounded-full hover:shadow-inner hover:shadow-black/10 hover:bg-black/10 hover:dark:bg-white/10"
                         onClick={toggleTheme}
@@ -86,7 +87,7 @@ function mobile(
                 <div
                     className={`nav-menu-mobile ${
                         showMenu
-                            ? "h-54 mt-4 opacity-100 pointer-events-auto"
+                            ? "h-72 mt-4 opacity-100 pointer-events-auto"
                             : "h-0 opacity-0 pointer-events-none"
                     }`}
                 >
@@ -98,6 +99,7 @@ function mobile(
 
                     <Link to="/">Inicio</Link>
                     <Link to="/denuncias">Denuncias</Link>
+                    <Link to="/denuncias">Noticias</Link>
                     <Link to="/contatos">Contato</Link>
                 </div>
             </div>
